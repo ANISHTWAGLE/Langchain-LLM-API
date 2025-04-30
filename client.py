@@ -1,7 +1,7 @@
 import requests   
 import streamlit as st  
 
-# Function to request an essay from the /essay endpoint
+# request an essay from the /essay endpoint
 def get_llama_response(input_text: str) -> str:
     # Send POST request with JSON payload containing 'topic'
     response = requests.post(
@@ -11,7 +11,7 @@ def get_llama_response(input_text: str) -> str:
     # Extract and return the 'output' field from the JSON response
     return response.json().get('output', '')
 
-# Function to request a poem from the /poem endpoint
+# request a poem from the /poem endpoint
 def get_gemma_response(input_text: str) -> str:
     response = requests.post(
         "http://localhost:8000/poem/invoke",
